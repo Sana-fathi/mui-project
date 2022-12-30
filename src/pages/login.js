@@ -57,15 +57,14 @@ const Login = styled(Grid)`
   // & .MuiTypography-root {
   //   font-size : 14px;
   // }
-  & .MuiOutlinedInput-root{
-    opacity: 0.5; 
-  }
+  // & .MuiOutlinedInput-root{
+  //   opacity: 0.5; 
+  // }
   & .MuiTextField-root {
     borderRadius: 50px;
   }
   & .MuiFormControlLabel-label {
     fontSize : 12px;
-    opacity: 0.7;
   }
   & .MuiLink-root {
     color: rgb(0, 171, 85);
@@ -83,6 +82,8 @@ export default function SignInSide() {
   const [ email ,setEmail ] = useState("");
   const [ password ,setPassword ] = useState("");
 console.log("email:", email)
+console.log("password:", password)
+
 
   const router = useRouter();
 
@@ -161,7 +162,8 @@ console.log("email:", email)
                 label="Password"
                 type="password"
                 id="password"
-               
+                value={password}
+                onChange={({ target }) => setPassword(target?.value)}
                 autoComplete="current-password"
               />
               <FormControlLabel 
